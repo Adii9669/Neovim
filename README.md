@@ -60,7 +60,7 @@ mkdir cutomname
 touch lazy.lua
 ```
 
-### 5. Lazy.lua 
+### 5. Copy the following in  Lazy.lua 
 ```
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -100,5 +100,37 @@ require("lazy").setup({
 -- This is also a good place to setup other settings (vim.opt)
 })
 ```
+### 6. Create a folder plugins 
+Plugins for Nvim
 
+Mason Nvim for installing the Lsp servers, formatter, Lintter.
+```
+return {
+
+
+  {
+    "williamboman/mason.nvim",
+    config = ture,
+
+    dependencies = {
+      "williamboman/mason-lspconfig.nvim",
+    },
+
+    config = function()
+      local mason = require("mason")
+
+      mason.setup({
+        ui = {
+          icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗",
+          },
+        },
+      })
+    end
+  },
+
+}
+```
 
