@@ -1,4 +1,4 @@
-# Neovim
+# Neovim Setup with Lazy.nvim
 Setup Lazy Neovim
 
 So first Thing you need to know is the Structured way for setting up the Neovim 
@@ -17,7 +17,6 @@ So first Thing you need to know is the Structured way for setting up the Neovim
             └── set.lua
 
 ```
-# Neovim Setup with Lazy.nvim
 
 This guide will help you set up Neovim using the `lazy.nvim` plugin manager in a structured and efficient manner.
 
