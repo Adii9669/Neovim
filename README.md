@@ -28,14 +28,19 @@ Below is the recommended directory structure for organizing your Neovim configur
 ### 1. Create the Neovim Config Directory
 If the `.config/nvim` directory doesn't already exist, create it:
 
-```bash
+```bash/zsh
 mkdir -p ~/.config/nvim
 cd ~/.config/nvim
+```
 
 
 Inside the ~/.config/nvim directory, create a file named init.lua:
 
+```zsh/bash
 touch init.lua
+```
+
+###2.
 Add the following content to init.lua:
 
 require("yourfoldername.lazy")
