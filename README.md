@@ -25,7 +25,5 @@ This is the inside of the init.lua
 require("milovim.lazy")
 require("milovim.remap")
 require("milovim.set")
-
-
-``lua`` -- Folder For plugins and custom files 
+```
 
