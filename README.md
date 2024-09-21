@@ -18,10 +18,12 @@ So first Thing you need to know is the Structured way for setting up the Neovim
 
 ```
 
-1. Create a folder in ```.config/nivm``` or if already their
+1. Create a folder in ```.config/nivm or if already their
 ```cd .config```
 
-2. Create a file ```touch init.lua```
+```
+
+3. Create a file ```touch init.lua```
    
 ```init.lua``` --This is the file where you use the file and folder to initate
 
