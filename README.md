@@ -47,16 +47,16 @@ require("yourfoldername.lazy")
 ```
 
 ### 3.Create a Folder in .config/nvim/lua
-    Inside lua create one more folde with you custom Name.
+ Inside lua create one more folde with you custom Name.
 ```zsh/bash
 mkdir lua
 cd lua
 mkdir cutomname
 ```
 
-### 4.Create a File in ```.config/nvim/lua/yourfoldername/lazy.lua
+### 4.Create a File in ```.config/nvim/lua/yourfoldername/lazy.lua```
 
-```
+```bash/zsh
 touch lazy.lua
 ```
 
