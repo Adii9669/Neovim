@@ -39,15 +39,16 @@ Inside the ~/.config/nvim directory, create a file named init.lua:
 ```zsh/bash
 touch init.lua
 ```
-```zsh/bash
-nvim .
-```
-
 
 ### 2.Add this Following line in init.lua.
   Add the following content to init.lua:
-```i
+```
 require("yourfoldername.lazy")
 ```
 
+### 3.Create a Folder in .config/nvim/lua
+
+```zsh/bash
+mkdir lua
+```
 
