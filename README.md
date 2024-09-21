@@ -20,9 +20,11 @@ So first Thing you need to know is the Structured way for setting up the Neovim
 
 ```init.lua``` --This is the file where you use the file and folder to initate
 
-This is the inside of the init.lua
+This is the inside of the init.lua 
+\n
 ``
 require("foldername.lazy")
+\n
 require("foldername.remap")
 require("foldername.set")
 ``
