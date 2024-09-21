@@ -1,0 +1,2 @@
+# Neovim
+Setup Lazy Neovim
