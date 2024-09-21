@@ -20,7 +20,6 @@ Below is the recommended directory structure for organizing your Neovim configur
             │   └── trouble.lua
             ├── remap.lua
             └── set.lua
-
 ```
 ## Step-by-Step Setup
 
@@ -79,7 +78,8 @@ touch set.lua
 ##  Plugins Installation
 
 
-### 1. Copy the following in  Lazy.lua 
+### 1. Copy the following in ```.config/nvim/lua/milovim/plugins/lazy.lua```
+ 
 ```bash
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -120,7 +120,7 @@ require("lazy").setup({
 })
 ```
 
-### 2.Copy the following in ```.config/nvim/lua/plugins/mason.lua``` 
+### 2. Copy the following in ```.config/nvim/lua/plugins/mason.lua``` 
 Create a file in plugins Folder ``mason.lua``
 
 ```
@@ -128,7 +128,7 @@ Create a file in plugins Folder ``mason.lua``
                 ├── mason.lua 
                 └── trouble.lua
 ```
-## Mason.lua
+## mason.lua
 ```bash 
   return {
   {
@@ -157,7 +157,7 @@ Create a file in plugins Folder ``mason.lua``
 }
 ```
 
-## AutoPairs
+## autopairs.lua
 ```bash
 return {
     "windwp/nvim-autopairs",
@@ -170,7 +170,7 @@ return {
 }
 ```
 
-## Cmp-auto
+## cmp-auto.lua
  For auto-completion
  ```bash
  return{
@@ -211,7 +211,7 @@ return {
 ```
 
 
-## colorscheme
+## colorscheme.lua
 ```bash
 return {
 
@@ -244,7 +244,7 @@ return {
   { "nvim-tree/nvim-web-devicons", lazy = true },
 }
 ```
-## Telescope
+## telescope.lua
 ```bash
 return {
 	"nvim-telescope/telescope.nvim",
@@ -261,7 +261,7 @@ return {
 ```
 
 
-## Directory - Telescope
+## dir-telescope.lua
 ```bash
 return {
 	"princejoogie/dir-telescope.nvim",
@@ -284,7 +284,7 @@ return {
 ```
 
 
-## Formatter
+## formatter.lua
 ```bash
 return {
 
@@ -333,7 +333,7 @@ return {
 ```
 
 
-## Lintting 
+## lintter.lua 
 ```bash
 return {
 
@@ -369,7 +369,7 @@ return {
 }
 ```
 
-## Lsp-config
+## Lsp-config.lua
 
 ```bash
 return {
@@ -418,7 +418,7 @@ return {
 }
 ```
 
-## Nvim-tree
+## nvim-tree.lua
 ```bash
 return {
   "nvim-neo-tree/neo-tree.nvim",
@@ -438,7 +438,7 @@ return {
 }
 ```
 
-## Nvim-treesitter
+## nvim-treesitter.lua
 ```bash
 return {
 	--For better  highlighting
@@ -498,7 +498,7 @@ return {
 
 
 
-## keymaps
+## keymaps.lua
 ```bash
 local opt = { noremap = true, silent = true }
 local keymap = vim.keymap.set
@@ -557,7 +557,7 @@ keymap("n", "<leader>tr", ":tabclose<CR>", opt) -- Close the current tab
 keymap("n", "<leader>ms", "<cmd>:Mason<cr>", opt)
 ```
 
-## Set
+## set.lua
 ```bash
 local global = vim.g
 local o = vim.opt
