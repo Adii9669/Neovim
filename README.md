@@ -3,22 +3,7 @@ Setup Lazy Neovim
 
 So first Thing you need to know is the Structured way for setting up the Neovim 
 
-```nvim
-    ├── init.lua
-    ├── lazy-lock.json
-    └── lua
-        └── [YourFolderName] eg milovim
-            ├── lazy.lua  
-            ├── option.lua
-            ├── plugins
-            │   ├── telescope.lua (eg)
-            │   └── trouble.lua
-            ├── remap.lua
-            └── set.lua
-
-```
-
-This guide will help you set up Neovim using the `lazy.nvim` plugin manager in a structured and efficient manner.
+This guide will help you set up Neovim using the `lazy.nvim` plugin manager in a structured manner.
 
 ## Neovim Directory Structure
 
@@ -37,7 +22,7 @@ Below is the recommended directory structure for organizing your Neovim configur
             ├── remap.lua
             └── set.lua
 
-
+```
 ## Step-by-Step Setup
 
 ### 1. Create the Neovim Config Directory
