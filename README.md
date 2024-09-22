@@ -41,6 +41,8 @@ touch init.lua
 ### 2.Add this Following line in ``init.lua``
 ```bash
 require("[name].lazy")
+require("[name].remap")
+require("[name].set")
 ```
 
 ### 3.Create a Folder in ``.config/nvim/lua``
