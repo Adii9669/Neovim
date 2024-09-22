@@ -12,7 +12,7 @@ Below is the recommended directory structure for organizing your Neovim configur
     ├── init.lua
     ├── lazy-lock.json
     └── lua
-        └── [YourFolderName] eg milovim
+        └── [name] eg milovim
             ├── lazy.lua  
             ├── option.lua
             ├── plugins
@@ -40,7 +40,7 @@ touch init.lua
 
 ### 2.Add this Following line in ``init.lua``
 ```bash
-require("yourfoldername.lazy")
+require("[name].lazy")
 ```
 
 ### 3.Create a Folder in ``.config/nvim/lua``
