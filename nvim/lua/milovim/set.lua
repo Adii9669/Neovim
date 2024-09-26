@@ -1,9 +1,10 @@
-
 local global = vim.g
 local o = vim.opt
 
 -- Editor options
 
+-- global.loaded_netrw = 1 --remove default explore
+--global.loaded_netrwPlugin = 1 --new tree-sitter
 o.number = true -- Print the line number in front of each line
 o.relativenumber = true -- Show the line number relative to the line with the cursor in front of each line.
 o.clipboard = "unnamedplus" -- uses the clipboard register for all operations except yank.
@@ -26,4 +27,3 @@ o.inccommand = "split" -- When nonempty, shows the effects of :substitute, :smag
 o.splitright = true
 o.splitbelow = true -- When on, splitting a window will put the new window below the current one
 o.termguicolors = true
- 

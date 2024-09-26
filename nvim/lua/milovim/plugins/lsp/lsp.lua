@@ -1,18 +1,4 @@
 return {
-	--LSPConfig: Integrates Mason with nvim-lspconfig
-	-- {
-	-- 	"williamboman/mason-lspconfig.nvim",
-	-- 	dependencies = { "williamboman/mason.nvim", "neovim/nvim-lspconfig" },
-	-- 	config = function()
-	-- 		require("mason").setup()
-	--
-	-- 		require("mason-lspconfig").setup({
-	-- 			ensure_installed = { "pyright", "ts_ls", "lua_ls" }, -- Add the LSPs you need
-	-- 			automatic_installation = true,
-	-- 		})
-	-- 	end,
-	-- },
-
 	-- LSPConfig: Basic LSP setup for Neovim
 	{
 		"neovim/nvim-lspconfig",

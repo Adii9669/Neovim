@@ -10,7 +10,7 @@ keymap("i", "jj", "<ESC>")
 --For quit and save the files
 keymap("n", "<leader>w", "<cmd>w<cr>")
 keymap("n", "<leader>q", "<cmd>q<cr>")
-keymap("n", "<leader>s", "<cmd>wq<cr>")
+keymap("n", "<leader>ss", "<cmd>wq<cr>")
 
 --For Changing buffer present
 keymap("n", "<C-i>", "<cmd>bprev<cr>")
