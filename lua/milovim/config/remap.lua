@@ -17,10 +17,10 @@ keymap("n", "<C-i>", "<cmd>bprev<cr>")
 keymap("n", "<C-o>", "<cmd>bnext<cr>")
 
 --For lazy
-keymap("n", "<leader>l", "<cmd>Lazy<cr>")
+keymap("n", "<leader>l", "<cmd>Lazy<cr>") --Lazy
 
 --source
-keymap("n", "<leader>so", ":w<CR>:so %<CR>")
+keymap("n", "<leader>so", ":w<CR>:so %<CR>") --soucre File
 
 -- Window Navigation
 keymap("n", "<C-h>", "<C-w>h")
@@ -40,7 +40,7 @@ keymap("n", "<leader>v", "<CMD>split<CR>")
 
 -- Switch between tabs
 keymap("n", "<leader>tt", ":tabnext<CR>", opt) -- Next tab
-keymap("n", "<leader>tp", ":tabprevious<CR>", opt) -- Previous tab
+keymap("n", "<leader>pt", ":tabprevious<CR>", opt) -- Previous tab
 
 -- Go to specific tab
 keymap("n", "<leader>1", "1gt", opt) -- Go to first tab
@@ -53,3 +53,8 @@ keymap("n", "<leader>tr", ":tabclose<CR>", opt) -- Close the current tab
 
 --Mason
 keymap("n", "<leader>ms", "<cmd>:Mason<cr>", opt)
+
+--ChangeTheme----
+keymap("n", "<leader>tn", ":colorscheme tokyonight-night<CR>", opt)
+keymap("n", "<leader>td", ":colorscheme tokyodark<CR>", opt)
+keymap("n", "<leader>tf", ":colorscheme nightfox<CR>", opt)
