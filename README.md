@@ -1,11 +1,11 @@
 # Neovim Setup with Lazy.nvim
 
-So first Thing you need to know is the Structured way for setting up the Neovim 
+So first Thing you need to know is the Structured way for setting up the Neovim
 
 This guide will help you set up Neovim using the `lazy.nvim` plugin manager in a structured manner.
 
-
 ## Structure
+
 Below is the recommended directory structure for organizing your Neovim configuration files:
 
 ```nvim
@@ -13,7 +13,7 @@ Below is the recommended directory structure for organizing your Neovim configur
     ├── lazy-lock.json
     └── lua
         └── [name] eg milovim
-            ├── lazy.lua  
+            ├── lazy.lua
             ├── option.lua
             ├── plugins
             │   ├── telescope.lua (eg)
@@ -21,9 +21,11 @@ Below is the recommended directory structure for organizing your Neovim configur
             ├── remap.lua
             └── set.lua
 ```
+
 ## Step-by-Step Setup
 
 ### 1. Create the Neovim Config Directory
+
 If the `.config/nvim` directory doesn't already exist, create it:
 
 ```bash/zsh
@@ -31,57 +33,58 @@ mkdir -p ~/.config/nvim
 cd ~/.config/nvim
 ```
 
-
-Inside the ``~/.config/nvim`` directory, create a file named ``init.lua``
+Inside the `~/.config/nvim` directory, create a file named `init.lua`
 
 ```zsh/bash
 touch init.lua
 ```
 
-### 2.Add this Following line in ``init.lua``
+### 2.Add this Following line in `init.lua`
+
 ```bash
 require("[name].lazy")
 require("[name].remap")
 require("[name].set")
 ```
 
-### 3.Create a Folder in ``.config/nvim/lua``
-  Inside lua create one more folder with you custom Name.
+### 3.Create a Folder in `.config/nvim/lua`
+
+Inside lua create one more folder with you custom Name.
+
 ```bash
 mkdir lua
 cd lua
 mkdir CustomName
 ```
- Create a Folder in ```.config/nvim/lua/plugins```
+
+Create a Folder in `.config/nvim/lua/plugins`
+
 ```bash
 mkdir plugins
 ```
 
- Create a File in ```.config/nvim/lua/```
+Create a File in `.config/nvim/lua/`
+
 ```bash
 touch lazy.lua
 ```
 
- Create a File in ```.config/nvim/lua/```
+Create a File in `.config/nvim/lua/`
+
 ```bash
 touch remap.lua
 ```
 
- Create a File in ```.config/nvim/lua/```
+Create a File in `.config/nvim/lua/`
+
 ```bash
 touch set.lua
 ```
 
+## Plugins Installation
 
+### 1. Copy the following in `.config/nvim/lua/milovim/plugins/lazy.lua`
 
-
-
-
-##  Plugins Installation
-
-
-### 1. Copy the following in ```.config/nvim/lua/milovim/plugins/lazy.lua```
- 
 ```bash
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -122,16 +125,19 @@ require("lazy").setup({
 })
 ```
 
-### 2. Copy the following in ```.config/nvim/lua/plugins/mason.lua``` 
-Create a file in plugins Folder ``mason.lua``
+### 2. Copy the following in `.config/nvim/lua/plugins/mason.lua`
+
+Create a file in plugins Folder `mason.lua`
 
 ```
          ├── plugins
-                ├── mason.lua 
+                ├── mason.lua
                 └── trouble.lua
 ```
+
 ## mason.lua
-```bash 
+
+```bash
   return {
   {
     "williamboman/mason.nvim",
@@ -160,6 +166,7 @@ Create a file in plugins Folder ``mason.lua``
 ```
 
 ## autopairs.lua
+
 ```bash
 return {
     "windwp/nvim-autopairs",
@@ -173,59 +180,61 @@ return {
 ```
 
 ## cmp-auto.lua
- For auto-completion
- ```bash
- return{
-  --nvim-cmp for autocompletion
-  {
-    "hrsh7th/nvim-cmp",
-    dependencies = {
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "saadparwaiz1/cmp_luasnip",
-      "L3MON4D3/LuaSnip"
-    },
-    config = function()
-      local cmp = require("cmp")
-      cmp.setup({
-        snippet = {
-          expand = function(args)
-            require('luasnip').lsp_expand(args.body)
-          end,
-        },
-        mapping = cmp.mapping.preset.insert({
-          ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-          ['<C-f>'] = cmp.mapping.scroll_docs(4),
-          ['<C-Space>'] = cmp.mapping.complete(),
-          ['<CR>'] = cmp.mapping.confirm({ select = true }),
-        }),
-        sources = {
-          { name = 'nvim_lsp' },
-          { name = 'buffer' },
-          { name = 'path' }
-        }
-      })
-    end
-  },
+
+For auto-completion
+
+```bash
+return{
+ --nvim-cmp for autocompletion
+ {
+   "hrsh7th/nvim-cmp",
+   dependencies = {
+     "hrsh7th/cmp-nvim-lsp",
+     "hrsh7th/cmp-buffer",
+     "hrsh7th/cmp-path",
+     "saadparwaiz1/cmp_luasnip",
+     "L3MON4D3/LuaSnip"
+   },
+   config = function()
+     local cmp = require("cmp")
+     cmp.setup({
+       snippet = {
+         expand = function(args)
+           require('luasnip').lsp_expand(args.body)
+         end,
+       },
+       mapping = cmp.mapping.preset.insert({
+         ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+         ['<C-f>'] = cmp.mapping.scroll_docs(4),
+         ['<C-Space>'] = cmp.mapping.complete(),
+         ['<CR>'] = cmp.mapping.confirm({ select = true }),
+       }),
+       sources = {
+         { name = 'nvim_lsp' },
+         { name = 'buffer' },
+         { name = 'path' }
+       }
+     })
+   end
+ },
 
 }
 ```
 
-
 ## colorscheme.lua
+
 ```bash
 return {
 
- --For Color-Scheme 
+ --For Color-Scheme
  {
   "folke/tokyonight.nvim",
   lazy = false,
   priority = 1000,
   opts = {},
 
-  config = function() 
-   vim.cmd([[colorscheme tokyonight-night]])  
+  config = function()
+   vim.cmd([[colorscheme tokyonight-night]])
   end,
   },
 
@@ -242,11 +251,13 @@ return {
 	},
 
 
-  --For icons 
+  --For icons
   { "nvim-tree/nvim-web-devicons", lazy = true },
 }
 ```
+
 ## telescope.lua
+
 ```bash
 return {
 	"nvim-telescope/telescope.nvim",
@@ -262,8 +273,8 @@ return {
 }
 ```
 
-
 ## dir-telescope.lua
+
 ```bash
 return {
 	"princejoogie/dir-telescope.nvim",
@@ -285,8 +296,8 @@ return {
 }
 ```
 
-
 ## formatter.lua
+
 ```bash
 return {
 
@@ -334,8 +345,8 @@ return {
 }
 ```
 
+## lintter.lua
 
-## lintter.lua 
 ```bash
 return {
 
@@ -421,6 +432,7 @@ return {
 ```
 
 ## Code-runner.lua
+
 ```bash
 return {
 	"CRAG666/code_runner.nvim",
@@ -443,9 +455,8 @@ return {
 }
 ```
 
-
-
 ## nvim-tree.lua
+
 ```bash
 return {
   "nvim-neo-tree/neo-tree.nvim",
@@ -466,6 +477,7 @@ return {
 ```
 
 ## nvim-treesitter.lua
+
 ```bash
 return {
 	--For better  highlighting
@@ -523,9 +535,8 @@ return {
 }
 ```
 
-
-
 ## keymaps.lua
+
 ```bash
 local opt = { noremap = true, silent = true }
 local keymap = vim.keymap.set
@@ -585,6 +596,7 @@ keymap("n", "<leader>ms", "<cmd>:Mason<cr>", opt)
 ```
 
 ## set.lua
+
 ```bash
 local global = vim.g
 local o = vim.opt

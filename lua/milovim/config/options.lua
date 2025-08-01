@@ -4,12 +4,15 @@ local o = vim.opt
 -- Editor options
 
 -- global.loaded_netrw = 1 --remove default explore
---global.loaded_netrwPlugin = 1 --new tree-sitter
+-- global.loaded_netrwPlugin = 1 --new tree-sitter
+o.clipboard = "unnamedplus"
+o.formatexpr = "v:lua.require'lazyvim.util'.format.formatexpr()"
 o.number = true -- Print the line number in front of each line
-o.relativenumber = true -- Show the line number relative to the line with the cursor in front of each line.
-o.clipboard = "unnamedplus" -- uses the clipboard register for all operations except yank.
-o.syntax = "on" -- When this option is set, the syntax with this name is loaded.
+o.relativenumber = false -- Show the line number relative to the line with the cursor in front of each line.
+o.spelllang = { "en" }
+o.clipboard = vim.env.SSH_TTY -- Sync with system clipboardo.syntax = "on"
 o.autoindent = true -- Copy indent from current line when starting a new line.
+o.linebreak = true -- Wrap lines at convenient points
 o.cursorline = true -- Highlight the screen line of the cursor with CursorLine.
 o.expandtab = true -- In Insert mode: Use the appropriate number of spaces to insert a <Tab>.
 o.shiftwidth = 2 -- Number of spaces to use for each step of (auto)indent.
@@ -27,3 +30,5 @@ o.inccommand = "split" -- When nonempty, shows the effects of :substitute, :smag
 o.splitright = true
 o.splitbelow = true -- When on, splitting a window will put the new window below the current one
 o.termguicolors = true
+o.shiftwidth = 4
+o.virtualedit = "block" -- Allow cursor to move where there is no text in visual block mode

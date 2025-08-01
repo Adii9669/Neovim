@@ -1,5 +1,4 @@
 -- This file is automatically loaded by lazyvim.config.init.
-
 local function augroup(name)
 	return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
 end
@@ -132,4 +131,33 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 	callback = function()
 		vim.lsp.buf.format({ async = false })
 	end,
+})
+
+vim.api.nvim_create_user_command("ViewWebsite", function(opts)
+	-- Adjust the browser command below based on your preferred browser.
+	vim.cmd("terminal w3m " .. opts.args)
+end, { nargs = 1 })
+
+--open neo tree
+vim.api.nvim_create_autocmd("VimEnter", {
+	callback = function()
+		if vim.fn.argc() == 0 then
+			require("neo-tree.command").execute({
+				toggle = true,
+				dir = vim.loop.cwd(),
+			})
+		end
+	end,
+})
+
+--for showing the errors
+vim.diagnostic.config({
+	virtual_text = {
+		prefix = "●", -- could be "■", "▶", "»"
+		spacing = 4,
+	},
+	signs = true,
+	underline = true,
+	update_in_insert = false,
+	severity_sort = true,
 })

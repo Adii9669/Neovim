@@ -22,15 +22,34 @@ vim.g.maplocalleader = "\\"
 require("lazy").setup({
 	spec = {
 		-- import your plugins
+		-- { import = "milovim.plugins.mason" },
+		-- { import = "milovim.plugins.lsp" },
 		{ import = "milovim.plugins" },
+		{ import = "milovim.plugins.tree" },
+		{ import = "milovim.plugins.theme" },
+		{ import = "milovim.plugins.telescope" },
+		{ import = "milovim.plugins.format" },
+		{ import = "milovim.plugins.snippets" },
+		{ import = "milovim.plugins.harpoon" },
 	},
-	-- Configure any other settings here. See the documentation for more details.
-	-- colorscheme that will be used when installing plugins.
-	install = { colorscheme = { "tokyonight" } },
-	-- automatically check for plugin updates
-	checker = { enabled = true },
 
-	-- Make sure to setup `mapleader` and `maplocalleader` before
-	-- loading lazy.nvim so that mappings are correct.
-	-- This is also a good place to setup other settings (vim.opt)
+	-- Configure any other settings here. See the documentation for more details.
+	--
+
+	-- automatically check for plugin updates
+	checker = {
+		enabled = true,
+		notify = false,
+	},
+})
+
+vim.api.nvim_create_autocmd("User", {
+	pattern = "LazyCheckDone",
+	callback = function()
+		local updates = require("lazy").updates()
+		if #updates > 0 then
+			require("lazy").sync() -- Auto install updates if available
+			vim.notify("Plugins updated!", vim.log.levels.INFO)
+		end
+	end,
 })

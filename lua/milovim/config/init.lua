@@ -1,0 +1,4 @@
+require("milovim.config.themeloader")
+require("milovim.config.keymap")
+require("milovim.config.options")
+require("milovim.config.autocmd")

@@ -4,7 +4,7 @@ return {
 
 	config = function()
 		require("cloak").setup({
-			enabled = true,
+			enabled = false,
 			cloak_character = "*",
 			-- the applied highlight group (colors) on the cloaking, see `:h highlight`.
 			highlight_group = "comment",
@@ -21,11 +21,11 @@ return {
 				{
 					-- match any file starting with '.env'.
 					-- this can be a table to match multiple file patterns.
-					file_pattern = ".env*",
+					file_pattern = "",
 					-- match an equals sign and any character after it.
 					-- this can also be a table of patterns to cloak,
 					-- example: cloak_pattern = { ':.+', '-.+' } for yaml files.
-					cloak_pattern = "=.+",
+					cloak_pattern = "",
 					-- a function, table or string to generate the replacement.
 					-- the actual replacement will contain the 'cloak_character'
 					-- where it doesn't cover the original text.
@@ -36,4 +36,3 @@ return {
 		})
 	end,
 }
-
