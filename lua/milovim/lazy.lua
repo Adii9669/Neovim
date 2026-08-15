@@ -22,15 +22,10 @@ vim.g.maplocalleader = "\\"
 require("lazy").setup({
 	spec = {
 		-- import your plugins
-		-- { import = "milovim.plugins.mason" },
-		-- { import = "milovim.plugins.lsp" },
 		{ import = "milovim.plugins" },
-		{ import = "milovim.plugins.tree" },
 		{ import = "milovim.plugins.theme" },
-		{ import = "milovim.plugins.telescope" },
 		{ import = "milovim.plugins.format" },
 		{ import = "milovim.plugins.snippets" },
-		{ import = "milovim.plugins.harpoon" },
 	},
 
 	-- Configure any other settings here. See the documentation for more details.

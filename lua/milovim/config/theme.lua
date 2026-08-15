@@ -1,1 +1,1 @@
-return { colorscheme = "sorbet" }
+return { colorscheme = "tokyonight-night" }

@@ -126,8 +126,7 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 
 -- Auto-format Go files on save
 vim.api.nvim_create_autocmd("BufWritePre", {
-	group = augroup("go_format_on_save"),
-	pattern = "*.go",
+	pattern = { "*.lua", "*.go", "*.cpp", "*.c" },
 	callback = function()
 		vim.lsp.buf.format({ async = false })
 	end,
@@ -160,4 +159,14 @@ vim.diagnostic.config({
 	underline = true,
 	update_in_insert = false,
 	severity_sort = true,
+})
+
+--cd to the folder
+vim.api.nvim_create_autocmd("VimEnter", {
+	callback = function()
+		local arg = vim.fn.argv(0)
+		if arg ~= "" and vim.fn.isdirectory(arg) == 1 then
+			vim.cmd("cd " .. arg)
+		end
+	end,
 })
